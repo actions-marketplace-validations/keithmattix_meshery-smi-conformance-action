@@ -35,7 +35,7 @@ main() {
 	kubectl config view --minify --flatten > ~/minified_config
 	mv ~/minified_config ~/.kube/config
 
-	curl -L https://git.io/meshery | DEPLOY_MESHERY=false bash -
+	curl -L https://git.io/meshery | DEPLOY_MESHERY=false PLATFORM=docker bash -
 
 	mesheryctl system context create new-context --adapters $service_mesh_adapter --platform docker --url http://localhost:9081 --set --yes
 
