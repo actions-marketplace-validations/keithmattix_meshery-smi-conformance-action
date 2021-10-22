@@ -1,4 +1,4 @@
-name: "Service Mesh Interface Conformance with Meshery"
+name: "Service Mesh Interface Conformance with Meshery - Fork (@keithmattix)"
 description: "Validate SMI specifications using Meshery"
 author: "Layer5"
 inputs:
