@@ -76,7 +76,9 @@ parse_command_line() {
 		case "${1:-}" in
 			-t|--provider-token)
 				if [[ -n "${2:-}" ]]; then
+					echo "provider_token_pre_parse = $2"
 					provider_token=$2
+					echo "provider_token_parse = $provider_token"
 					shift
 				else
 					echo "ERROR: '-t|--provider_token' cannot be empty." >&2
