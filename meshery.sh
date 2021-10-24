@@ -75,9 +75,9 @@ parse_command_line() {
 	do
 		case "${1:-}" in
 			-t|--provider-token)
-				if [[ -n "${2:-}" ]]; then
-					echo "provider_token_pre_parse = $2"
-					provider_token=$2
+				if [[ -n "${1:-}" ]]; then
+					echo "provider_token_pre_parse = $1"
+					provider_token=$1
 					echo "provider_token_parse = $provider_token"
 					shift
 				else
@@ -86,8 +86,8 @@ parse_command_line() {
 				fi
 				;;
 			--service-mesh)
-				if [[ -n "${2:-}" ]]; then
-					service_mesh_adapter=meshery-$2
+				if [[ -n "${1:-}" ]]; then
+					service_mesh_adapter=meshery-$1
 					shift
 				else
 					echo "ERROR: '--service-mesh' cannot be empty." >&2
