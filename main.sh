@@ -29,6 +29,7 @@ main() {
 		setupArgs+=(--service-mesh ${serviceMeshAbb})
 	fi
 
+	echo "Command: $SCRIPT_DIR/meshery.sh" "${setupArgs[@]}"
 	"$SCRIPT_DIR/meshery.sh" "${setupArgs[@]}"
 
 	commandArgs=()
