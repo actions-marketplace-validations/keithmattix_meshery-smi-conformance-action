@@ -14,6 +14,9 @@ main() {
 
 	parse_command_line "$@"
 
+	echo "provider_token = $provider_token"
+	echo "service_mesh_adapter = $service_mesh_adapter"
+
 	echo "Checking if a k8s cluster exits..."
 	if kubectl config current-context
 	then
