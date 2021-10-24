@@ -49,7 +49,8 @@ main() {
 		sleep 30
 	fi
 
-	mesheryctl mesh validate --spec "smi" --adapter $service_mesh_adapter -t ~/auth.json --watch & kubectl logs -f deploy/smi-conformance -nmeshery
+	mesheryctl mesh validate --spec "smi" --adapter $service_mesh_adapter -t ~/auth.json --watch
+	kubectl logs deploy/smi-conformance -nmeshery
 	echo "Uploading results to cloud provider..."
 	sleep 20
 }
