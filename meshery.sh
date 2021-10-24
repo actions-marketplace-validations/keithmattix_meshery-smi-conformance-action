@@ -14,9 +14,6 @@ main() {
 
 	parse_command_line "$@"
 
-	echo "provider_token = $provider_token"
-	echo "service_mesh_adapter = $service_mesh_adapter"
-
 	echo "Checking if a k8s cluster exits..."
 	if kubectl config current-context
 	then
@@ -76,9 +73,7 @@ parse_command_line() {
 		case "${1:-}" in
 			-t|--provider-token)
 				if [[ -n "${2:-}" ]]; then
-					echo "provider_token_pre_parse = $2"
 					provider_token=$2
-					echo "provider_token_pre_parse = $2"
 					shift
 				else
 					echo "ERROR: '-t|--provider_token' cannot be empty." >&2
