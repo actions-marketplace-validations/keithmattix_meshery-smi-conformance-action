@@ -51,8 +51,8 @@ main() {
 
 	mesheryctl mesh validate --spec "smi" --adapter $service_mesh_adapter -t ~/auth.json --watch &
 	sleep 120 # Wait for mesh validation to start
-	kubectl logs deploy/smi-conformance -nmeshery
-	fg
+	kubectl logs deploy/smi-conformance -nmeshery &
+	fg %2 # Bring mesheryctl validate command back to the foreground
 	echo "Uploading results to cloud provider..."
 	sleep 20
 }
